@@ -30,9 +30,7 @@ public class ConnectionManager {
 
         try {
 
-            connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:mkyong", "username",
-                    "password");
+            connection = DriverManager.getConnection(connectionUrl, user, password);
 
         } catch (SQLException e) {
 

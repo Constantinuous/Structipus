@@ -12,14 +12,16 @@ public class App {
         System.out.println("-------- Oracle JDBC Connection Testing ------");
         connectionManager.testOracleDriver();
 
-        if(argv.length != 3){
+        if(argv.length != 4){
             System.out.println("You need exactly three parameters");
         }
         String url = argv[0];
         String user = argv[1];
         String pw = argv[2];
+        String table = argv[3];
+
         try(Connection connection = connectionManager.getConnection(url, user, pw)){
-            ForeignKeyHandler.printForeignKeys(connection, "HCSPDB.TAB_IDY_ENTITY");
+            ForeignKeyHandler.printForeignKeys(connection, table);
         }catch (Exception e){
 
         }

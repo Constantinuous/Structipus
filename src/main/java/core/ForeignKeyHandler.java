@@ -10,8 +10,6 @@ import java.sql.SQLException;
  */
 public class ForeignKeyHandler {
 
-
-
     public static void printForeignKeys(Connection connection, String tableName) throws SQLException {
         DatabaseMetaData metaData = connection.getMetaData();
         ResultSet foreignKeys = metaData.getImportedKeys(connection.getCatalog(), null, tableName);
