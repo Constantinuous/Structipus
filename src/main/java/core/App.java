@@ -20,8 +20,9 @@ public class App {
         String pw = argv[2];
         String table = argv[3];
 
+        String schema = "public";
         try(Connection connection = connectionManager.getConnection(url, user, pw)){
-            ForeignKeyHandler.printForeignKeys(connection, table);
+            MetaDataPrinter.printForeignKeys(connection, schema, table);
         }catch (Exception e){
 
         }

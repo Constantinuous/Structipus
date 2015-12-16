@@ -12,7 +12,7 @@ databaseChangeLog() {
                 constraints(nullable: false)
             }
         }
-        createIndex(indexName: 'idx_name', tableName: 'my_table') {
+        createIndex(indexName: 'idx_my_table_name', tableName: 'my_table') {
             column(name: 'name')
         }
         rollback() {

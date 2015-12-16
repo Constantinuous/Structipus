@@ -13,3 +13,8 @@
 
 ## Run Configuration
 test
+
+## Update Databse
+* This Project uses liquidbase to keep the integration Test Database current.
+* Reset the Integration Test Database with: $ gradlew dropAll
+* Update the Integration Test Database with: $ gradlew update

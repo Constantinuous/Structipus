@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -16,7 +15,7 @@ import static org.hamcrest.Matchers.nullValue;
 /**
  * Created by RichardG on 16.12.2015.
  */
-public class TestHsqlb {
+public class DataPrinterTest {
 
     private Properties properties;
 
@@ -35,31 +34,10 @@ public class TestHsqlb {
     }
 
     @Test
-    public void testDriver(){
-        try {
-            Class.forName(dbDriver);
-        } catch (ClassNotFoundException e) {
-            System.err.println("ERROR: failed to load HSQLDB JDBC driver.");
-            e.printStackTrace();
-            return;
-
-        }
-
-        System.out.println("HSQLDB JDBC Driver Registered!");
-    }
-
-    @Test
-    public void testCatalogs(){
+    public void testTables() throws SQLException {
         String connStr = dbUrl;
-        System.out.println("Connection String: "+dbUrl);
         try (Connection connection = DriverManager.getConnection(connStr, "sa", "")) {
-            ResultSet rs = connection.getMetaData().getCatalogs();
-
-            while (rs.next()) {
-                System.out.println("TABLE_CAT = " + rs.getString("TABLE_CAT") );
-            }
-        }catch (SQLException e){
-
+            DataPrinter.printRows(connection, "PUBLIC", "ROLES");
         }
     }
 }
