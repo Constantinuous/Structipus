@@ -1,0 +1,9 @@
+.idea/
+build/
+.gradle/
+DatabaseAnalytics.iml
+src/test/tmp/
+DatabaseAnalytics.ipr
+DatabaseAnalytics.iws
+*.iml
+metricsdatabase/src/integrationTest/tmp/
