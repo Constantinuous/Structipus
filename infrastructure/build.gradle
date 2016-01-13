@@ -2,4 +2,6 @@ dependencies {
     compile project(":domain")
 	compile project(":application")
 	compile project(":presentation")
+
+    compile group: 'org.picocontainer', name: 'picocontainer', version: '2.15'
 }
