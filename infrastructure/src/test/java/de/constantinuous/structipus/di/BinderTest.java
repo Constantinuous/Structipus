@@ -39,6 +39,17 @@ public class BinderTest {
     }
 
     @Test
+    public void shouldReturnNull(){
+        Binder binder = new Binder();
+        binder.bindInterface(Orange.class).toImplementation(BlackOrange.class);
+
+        Apple apple = binder.getImplementation(Apple.class);
+        // binder could create this apple, because it knows how to create an orange but it does not
+        Assert.assertNull(apple);
+    }
+
+
+    @Test
     public void shouldReturnRedApple(){
         Binder binder = new Binder();
         binder.bindInterface(Orange.class).toImplementation(BlackOrange.class);
@@ -59,16 +70,5 @@ public class BinderTest {
         Fruit fruit = binder.getImplementation(Fruit.class);
 
         Assert.assertThat(fruit, instanceOf(BlueApple.class));
-    }
-    @Test
-    public void shouldReturnNull(){
-        Binder binder = new Binder();
-        binder.bindInterface(Orange.class).toImplementation(BlackOrange.class);
-        binder.bindInterface(Fruit.class).toImplementation(BlueApple.class);
-        binder.bindInterface(Apple.class).toImplementation(RedApple.class);
-
-        Pear pear = binder.getImplementation(Pear.class);
-
-        Assert.assertNull(pear);
     }
 }
