@@ -24,6 +24,8 @@ public class AstMetricCounterTest {
             int mcCabe = javaPrinter.getMcCabe();
             Assert.assertThat(mcCabe, is(0));
         }
+
+        // new ByteArrayInputStream(string.getBytes()); // transform a string to an inputstream
     }
 
     @Test
