@@ -11,7 +11,7 @@ import java.sql.SQLException;
 /**
  * Created by Richard on 6/4/2015.
  */
-public class ReferenceTest {
+public class ReferenceIT {
 
     @Test
     public void testFoo() {

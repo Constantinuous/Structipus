@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 /**
  * Created by RichardG on 16.12.2015.
  */
-public class PropertyLoaderTest {
+public class PropertyLoaderIT {
 
     @Test
     public void testLoad(){

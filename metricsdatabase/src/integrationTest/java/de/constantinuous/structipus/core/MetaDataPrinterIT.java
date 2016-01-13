@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.nullValue;
 /**
  * Created by RichardG on 16.12.2015.
  */
-public class MetaDataPrinterTest {
+public class MetaDataPrinterIT {
 
     private Properties properties;
 
