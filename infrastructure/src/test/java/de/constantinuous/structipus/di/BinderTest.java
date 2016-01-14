@@ -1,11 +1,8 @@
 package de.constantinuous.structipus.di;
 
-import de.constantinous.structious.di.Binder;
 import de.constantinuous.structipus.di.model.*;
 import org.junit.Assert;
 import org.junit.Test;
-import org.picocontainer.DefaultPicoContainer;
-import org.picocontainer.MutablePicoContainer;
 
 import static org.hamcrest.Matchers.*;
 

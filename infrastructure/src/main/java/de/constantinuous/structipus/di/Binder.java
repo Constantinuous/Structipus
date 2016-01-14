@@ -1,4 +1,4 @@
-package de.constantinous.structious.di;
+package de.constantinuous.structipus.di;
 
 import org.picocontainer.DefaultPicoContainer;
 import org.picocontainer.MutablePicoContainer;

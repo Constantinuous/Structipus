@@ -1,4 +1,4 @@
-package de.constantinous.structious.di;
+package de.constantinuous.structipus.di;
 
 /**
  * Created by RichardG on 13.01.2016.

@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 import static org.hamcrest.Matchers.*;
 
@@ -15,11 +16,9 @@ import static org.hamcrest.Matchers.*;
  */
 public class AstMetricCounterTest {
 
-    private final String prefix = "src/test/resources/";
-
     @Test
     public void testSimpleClassMcCabe() throws IOException, ParseException {
-        try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(prefix+"javacode/SimpleMetricCounter/SuperSimple.java")) {
+        try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream("javacode/SimpleMetricCounter/SuperSimple.java.example")) {
             AstMetricCounter javaPrinter = new AstMetricCounter(inputStream);
             int mcCabe = javaPrinter.getMcCabe();
             Assert.assertThat(mcCabe, is(0));
@@ -30,7 +29,18 @@ public class AstMetricCounterTest {
 
     @Test
     public void testFooClassMcCabe() throws IOException, ParseException {
-        try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(prefix+"javacode/SimpleMetricCounter/Foo.java")) {
+        String location = "javacode/SimpleMetricCounter/Foo.java.example";
+        URL url = getClass().getClassLoader().getResource(location);
+//
+//        String file = url.getFile();
+//        String path = url.getPath();
+//        Object content = url.getContent();
+        File f = new File(location);
+        String absoluteFilePath = f.getAbsolutePath();
+        boolean exists = f.exists();
+
+
+        try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(location)) {
             AstMetricCounter javaPrinter = new AstMetricCounter(inputStream);
             int mcCabe = javaPrinter.getMcCabe();
             Assert.assertThat(mcCabe, is(0));
@@ -39,7 +49,7 @@ public class AstMetricCounterTest {
 
     @Test
     public void testCarClassMcCabe() throws IOException, ParseException {
-        try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream(prefix+"javacode/Car.java")) {
+        try(InputStream inputStream = getClass().getClassLoader().getResourceAsStream("javacode/Car.java.example")) {
             AstMetricCounter javaPrinter = new AstMetricCounter(inputStream);
             int mcCabe = javaPrinter.getMcCabe();
             Assert.assertThat(mcCabe, is(5));
