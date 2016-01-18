@@ -8,3 +8,4 @@ DatabaseAnalytics.iws
 *.iml
 metricsdatabase/src/integrationTest/tmp/
 out/
+target/
