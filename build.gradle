@@ -9,10 +9,16 @@
 group 'de.constantinuous'
 version '1.0-SNAPSHOT'
 
+repositories {
+    mavenCentral()
+}
 
 buildscript {
     repositories {
         mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.1")
     }
 }
 
@@ -20,7 +26,8 @@ allprojects {
     apply plugin: 'java'
 	apply plugin: 'eclipse'
 	apply plugin: 'idea'
-	// apply plugin: 'checkstyle'
+
+    // apply plugin: 'checkstyle'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -35,10 +42,6 @@ allprojects {
 compileJava {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-}
-
-repositories {
-    mavenCentral()
 }
 
 
@@ -77,6 +80,8 @@ subprojects {
         //testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.+'
         testCompile 'org.jbehave:jbehave-core:4.0.4'
         testCompile 'de.codecentric:jbehave-junit-runner:1.2.0'
+        testCompile 'net.serenity-bdd:serenity-core:1.1.24'
+        testCompile 'net.serenity-bdd:serenity-jbehave:1.5.0'
 
         integrationTestCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
         integrationTestCompile group: 'junit', name: 'junit-dep', version: '4.11'
@@ -98,3 +103,7 @@ subprojects {
     }
 }
 
+
+project(':application') {
+    apply plugin: 'net.serenity-bdd.aggregator'
+}

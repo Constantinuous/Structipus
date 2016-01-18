@@ -5,11 +5,11 @@ I want to define the behaviour of a custom stack
 
 Scenario: I push an item onto the stack
 Given I have an empty stack
-When  I push an item 'orange'
-Then  I should count 1
+When I push an item 'wool'
+Then I should count 1
 
 Scenario: I pop from the stack
 Given I have an empty stack
-When  I push an item 'apple'
-And   I pop the stack
-Then  I should count 0
+When I push an item 'apple'
+And I pop the stack
+Then I should count 0

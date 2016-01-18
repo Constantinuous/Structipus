@@ -18,3 +18,17 @@ test
 * This Project uses liquidbase to keep the integration Test Database current.
 * Reset the Integration Test Database with: $ gradlew dropAll
 * Update the Integration Test Database with: $ gradlew update
+
+## Gradle Targets
+Usefule Gradle targets are:
+### Build
+* Build with: gradle build
+* Clean with: gradle clean
+### Integration Test
+* Liquibase upgrade: gradle upgrade
+### IDE
+* Generate IntelliJ IDEA project: gradle idea
+* Clean IntelliJ IDEA project: gradle ideaClean
+### Report
+* Serenity-BDD Report (Report in target/site/serenity): gradle clean test aggregate
+* Clear Serenity-Reports: gradle clearReports
