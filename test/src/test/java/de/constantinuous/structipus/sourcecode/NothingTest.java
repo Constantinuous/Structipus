@@ -3,7 +3,8 @@ package de.constantinuous.structipus.sourcecode;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+
 /**
  * Created by RichardG on 12.01.2016.
  */

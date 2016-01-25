@@ -9,3 +9,5 @@ DatabaseAnalytics.iws
 metricsdatabase/src/integrationTest/tmp/
 out/
 target/
+src/integrationTest/tmp/
+test/src/integrationTest/tmp/

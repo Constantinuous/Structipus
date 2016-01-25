@@ -7,43 +7,5 @@
  */
 
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.liquibase:liquibase-gradle-plugin:1.2.0"
-        classpath 'org.hsqldb:hsqldb:2.3.3'
-    }
-}
-
-
-apply plugin: 'java'
-apply plugin: 'liquibase'
-
-liquibase {
-	activities {
-		main {
-			changeLogFile 'changelog.groovy'
-			url 'jdbc:hsqldb:file:src/integrationTest/tmp/hsqldb/db;FILE_LOCK=NO'
-			username 'sa'
-			password ''
-			changeLogParameters([ myToken: 'myvalue',
-								  second: 'secondValue'])
-		}
-		second {
-			changeLogFile 'second.groovy'
-			url 'jdbc:hsqldb:file:src/integrationTest/tmp/hsqldb/db;FILE_LOCK=NO'
-			username 'sa'
-			password ''
-			changeLogParameters([ myToken: 'myvalue',
-								  second: 'secondValue'])
-		}
-	}
-
-	// runList = project.ext.runList
-	// runList = 'main'
-	runList = 'main, second'
-}
 
 
