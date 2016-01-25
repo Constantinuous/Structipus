@@ -1,2 +1,2 @@
-include 'shared', 'domain', 'application', 'presentation', 'metricsdatabase', 'metricssourcecode',  'infrastructure'
+include 'shared', 'domain', 'application', 'presentation', 'metricsdatabase', 'metricssourcecode',  'infrastructure', 'test'
 

@@ -15,6 +15,6 @@ public class MockitoTest {
         List list = Mockito.mock(List.class);
         Mockito.when(list.isEmpty()).thenReturn(Boolean.FALSE);
         Mockito.when(list.isEmpty());
-        
+
     }
 }
